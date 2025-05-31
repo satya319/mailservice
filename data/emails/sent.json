@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1748715890085,
+    "from": "john@yourdomain.com",
+    "to": "satyajit319@gmail.com",
+    "cc": "ritesh.hr09@gmail.com",
+    "subject": "hi testing",
+    "body": "hello hnsiundhpew",
+    "date": "2025-05-31T18:24:50.085Z",
+    "read": true,
+    "starred": false,
+    "attachments": [],
+    "messageId": "<5e713e3b-bb30-b3bb-2d82-d8640b86db8f@yourdomain.com>"
+  },
+  {
+    "id": 4,
+    "from": "john@yourdomain.com",
+    "to": "alice@example.com",
+    "subject": "Re: Welcome to CustomMail!",
+    "body": "Hi Alice,\n\nThank you for the welcome! The system looks great and I'm excited to start using it.\n\nThe interface is very intuitive and reminds me of Gmail, which is perfect.\n\nBest,\nJohn",
+    "date": "2024-01-15T05:30:00.000Z",
+    "read": true,
+    "starred": false,
+    "attachments": []
+  }
+]

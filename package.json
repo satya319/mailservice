@@ -1,0 +1,29 @@
+{
+  "name": "custommail",
+  "version": "1.0.0",
+  "description": "A self-hosted email service with Gmail-like functionality using serverless architecture.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node test-email.js",
+    "deploy": "node deploy.js",
+    "test-send": "node -e \"require('./test-email').testEmailSending()\"",
+    "test-receive": "node -e \"require('./test-email').testEmailReceiving()\"",
+    "generate-dkim": "node generate-dkim.js generate",
+    "show-dns": "node generate-dkim.js dns",
+    "setup": "node setup-production.js",
+    "test-production": "node test-production.js",
+    "test-dns": "node test-production.js dns",
+    "test-smtp": "node test-production.js smtp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/cli": "^20.0.0",
+    "mailparser": "^3.7.3",
+    "nodemailer": "^7.0.3",
+    "smtp-server": "^3.13.7"
+  }
+}

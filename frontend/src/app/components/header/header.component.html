@@ -1,0 +1,36 @@
+<header class="header">
+  <div class="header-left">
+    <div class="logo">
+      <h1>CustomMail</h1>
+    </div>
+  </div>
+  
+  <div class="header-center">
+    <div class="search-container">
+      <input 
+        type="text" 
+        placeholder="Search mail..." 
+        [(ngModel)]="searchQuery"
+        (keyup.enter)="onSearch()"
+      >
+      <button class="search-button" (click)="onSearch()">
+        <i class="material-icons">search</i>
+      </button>
+    </div>
+  </div>
+  
+  <div class="header-right">
+    <div class="user-info" *ngIf="currentUser">
+      <span class="user-name">{{ currentUser.firstName }} {{ currentUser.lastName }}</span>
+      <div class="user-avatar">
+        <img *ngIf="currentUser.avatar" [src]="currentUser.avatar" alt="User avatar">
+        <div *ngIf="!currentUser.avatar" class="avatar-placeholder">
+          {{ currentUser.firstName.charAt(0) }}{{ currentUser.lastName.charAt(0) }}
+        </div>
+      </div>
+      <button class="logout-button" (click)="logout()">
+        <i class="material-icons">exit_to_app</i>
+      </button>
+    </div>
+  </div>
+</header>

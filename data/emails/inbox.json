@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1748715890083,
+    "from": "john@yourdomain.com",
+    "to": "satyajit319@gmail.com",
+    "cc": "ritesh.hr09@gmail.com",
+    "subject": "hi testing",
+    "body": "hello hnsiundhpew",
+    "date": "2025-05-31T18:24:50.083Z",
+    "read": false,
+    "starred": false,
+    "attachments": []
+  },
+  {
+    "id": 3,
+    "from": "newsletter@techblog.com",
+    "to": "john@yourdomain.com",
+    "subject": "Weekly Tech Newsletter - Serverless Trends",
+    "body": "This week in tech:\n\n🚀 Serverless Computing Advances\n- New AWS Lambda features\n- Edge computing improvements\n- Cost optimization strategies\n\n💡 AI & Machine Learning\n- Latest ChatGPT updates\n- Open source AI models\n- ML deployment best practices\n\n🔧 Development Tools\n- New VS Code extensions\n- Docker improvements\n- CI/CD pipeline updates\n\nRead more at techblog.com",
+    "date": "2024-01-13T03:30:00.000Z",
+    "read": true,
+    "starred": false,
+    "attachments": []
+  },
+  {
+    "id": 2,
+    "from": "bob@company.com",
+    "to": "john@yourdomain.com",
+    "subject": "Project Update - Q1 2024",
+    "body": "Hi John,\n\nHere's the latest update on our project. Everything is going according to plan and we're on track for the Q1 delivery.\n\nKey milestones completed:\n- Backend API development\n- Frontend UI implementation\n- Database schema design\n- Initial testing phase\n\nNext steps:\n- User acceptance testing\n- Performance optimization\n- Security audit\n\nThanks,\nBob",
+    "date": "2024-01-14T08:50:00.000Z",
+    "read": true,
+    "starred": false,
+    "attachments": []
+  },
+  {
+    "id": 1,
+    "from": "alice@example.com",
+    "to": "john@yourdomain.com",
+    "subject": "Welcome to CustomMail!",
+    "body": "Hi John,\n\nWelcome to your new self-hosted email service! This is a test email to show how the system works.\n\nYou can now:\n- Send and receive emails\n- Organize with folders\n- Search through your messages\n- Attach files\n\nBest regards,\nAlice",
+    "date": "2024-01-15T05:00:00.000Z",
+    "read": false,
+    "starred": true,
+    "attachments": []
+  }
+]

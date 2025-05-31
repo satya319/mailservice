@@ -1,0 +1,129 @@
+<div class="register-container">
+  <div class="register-card">
+    <h2>CustomMail</h2>
+    <h3 *ngIf="!showConfirmation">Create Account</h3>
+    <h3 *ngIf="showConfirmation">Confirm Your Email</h3>
+    
+    <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+    
+    <form *ngIf="!showConfirmation" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group col">
+          <label for="firstName">First Name</label>
+          <input 
+            type="text" 
+            formControlName="firstName" 
+            class="form-control" 
+            [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }" 
+            placeholder="First name"
+          />
+          <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
+            <div *ngIf="f['firstName'].errors['required']">First Name is required</div>
+          </div>
+        </div>
+        
+        <div class="form-group col">
+          <label for="lastName">Last Name</label>
+          <input 
+            type="text" 
+            formControlName="lastName" 
+            class="form-control" 
+            [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }" 
+            placeholder="Last name"
+          />
+          <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
+            <div *ngIf="f['lastName'].errors['required']">Last Name is required</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          formControlName="email" 
+          class="form-control" 
+          [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" 
+          placeholder="Email address"
+        />
+        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+          <div *ngIf="f['email'].errors['required']">Email is required</div>
+          <div *ngIf="f['email'].errors['email']">Email must be a valid email address</div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          formControlName="password" 
+          class="form-control" 
+          [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" 
+          placeholder="Password"
+        />
+        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+          <div *ngIf="f['password'].errors['required']">Password is required</div>
+          <div *ngIf="f['password'].errors['minlength']">Password must be at least 8 characters</div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input 
+          type="password" 
+          formControlName="confirmPassword" 
+          class="form-control" 
+          [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }" 
+          placeholder="Confirm password"
+        />
+        <div *ngIf="submitted && f['confirmPassword'].errors" class="invalid-feedback">
+          <div *ngIf="f['confirmPassword'].errors['required']">Confirm Password is required</div>
+          <div *ngIf="f['confirmPassword'].errors['mustMatch']">Passwords must match</div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary btn-block">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Create Account
+        </button>
+      </div>
+    </form>
+    
+    <div *ngIf="showConfirmation" class="confirmation-form">
+      <p>We've sent a confirmation code to <strong>{{ email }}</strong>. Please enter the code below to verify your email address.</p>
+      
+      <div class="form-group">
+        <label for="confirmationCode">Confirmation Code</label>
+        <input 
+          type="text" 
+          #confirmationCode
+          class="form-control" 
+          placeholder="Enter confirmation code"
+        />
+      </div>
+      
+      <div class="form-group">
+        <button 
+          [disabled]="loading" 
+          class="btn btn-primary btn-block"
+          (click)="onConfirmCode(confirmationCode.value)"
+        >
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Verify Email
+        </button>
+      </div>
+      
+      <div class="resend-code">
+        Didn't receive a code? 
+        <button class="btn-link" (click)="resendCode()" [disabled]="loading">
+          Resend Code
+        </button>
+      </div>
+    </div>
+    
+    <div class="login-link">
+      Already have an account? <a routerLink="/login">Sign In</a>
+    </div>
+  </div>
+</div>

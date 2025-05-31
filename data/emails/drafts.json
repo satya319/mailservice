@@ -1,0 +1,13 @@
+[
+  {
+    "id": 5,
+    "from": "john@yourdomain.com",
+    "to": "team@company.com",
+    "subject": "Meeting Notes - Weekly Standup",
+    "body": "Hi team,\n\nHere are the notes from today's meeting:\n\n## Agenda\n1. Project status updates\n2. Blockers and challenges\n3. Next week's priorities\n\n## Action Items\n- [ ] Complete API documentation\n- [ ] Review security requirements\n- [ ] Schedule user testing sessions\n\n[Draft - not sent yet]",
+    "date": "2024-01-15T11:00:00.000Z",
+    "read": true,
+    "starred": false,
+    "attachments": []
+  }
+]

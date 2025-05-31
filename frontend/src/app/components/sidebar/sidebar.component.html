@@ -1,0 +1,55 @@
+<div class="sidebar">
+  <div class="compose-button-container">
+    <button class="compose-button" (click)="composeEmail()">
+      <i class="material-icons">add</i>
+      <span>Compose</span>
+    </button>
+  </div>
+  
+  <div class="sidebar-section">
+    <div class="sidebar-item" 
+         *ngFor="let folder of folders"
+         [routerLink]="['/folder', folder.id]"
+         routerLinkActive="active">
+      <div class="sidebar-item-icon">
+        <i class="material-icons">
+          {{ folder.id === 'inbox' ? 'inbox' : 
+             folder.id === 'sent' ? 'send' : 
+             folder.id === 'drafts' ? 'drafts' : 
+             folder.id === 'trash' ? 'delete' : 'folder' }}
+        </i>
+      </div>
+      <div class="sidebar-item-label">{{ folder.name }}</div>
+      <div class="sidebar-item-count" *ngIf="folder.count > 0">
+        <span [class.unread]="folder.unreadCount && folder.unreadCount > 0">
+          {{ folder.unreadCount ? folder.unreadCount : folder.count }}
+        </span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="sidebar-divider"></div>
+  
+  <div class="sidebar-section">
+    <div class="sidebar-section-header">
+      <span>Labels</span>
+    </div>
+    
+    <div class="sidebar-item" 
+         *ngFor="let label of labels"
+         [routerLink]="['/label', label.id]"
+         routerLinkActive="active">
+      <div class="sidebar-item-icon">
+        <div class="label-color" [style.background-color]="label.color"></div>
+      </div>
+      <div class="sidebar-item-label">{{ label.name }}</div>
+    </div>
+  </div>
+  
+  <div class="sidebar-footer">
+    <button class="settings-button" [routerLink]="['/settings']">
+      <i class="material-icons">settings</i>
+      <span>Settings</span>
+    </button>
+  </div>
+</div>
